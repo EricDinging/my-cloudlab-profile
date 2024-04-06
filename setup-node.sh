@@ -129,9 +129,9 @@ chown -R root.root /data/docker-data
 chmod -R g-s /data/docker-data
 
 # block traffic to docker containers
-firewall-cmd --zone=docker --set-target=default --permanent
-firewall-cmd --reload
-systemctl restart docker
+# firewall-cmd --zone=docker --set-target=default --permanent
+# firewall-cmd --reload
+# systemctl restart docker
 
 # miniconda
 CONDA_PREFIX=/opt/miniconda3
