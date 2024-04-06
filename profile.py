@@ -85,10 +85,10 @@ if params.has_nfs:
 
 # Nodes
 for i in range(params.num_nodes):
-    node = request.RawPC(f"node-{i+1}")
+    node = request.RawPC("node-{}".format(i+1))
     node.disk_image = params.os_image
     node.hardware_type = params.node_hw
-    bs = node.Blockstore(f"bs-{i+1}", "/data")
+    bs = node.Blockstore("bs-{}".format(i+1), "/data")
     bs.size = params.data_size
     intf = node.addInterface("if1")
     # if node.hardware_type == "r7525":
@@ -102,7 +102,7 @@ for i in range(params.num_nodes):
     #     linkbf.addInterface(bfif)
     
     intf.addAddress(rspec.IPv4Address(
-        f"192.168.1.{i+1}", "255.255.255.0"))
+        "192.168.1.{}".format(i+1), "255.255.255.0"))
     lan.addInterface(intf)
 
     # node.addService(rspec.Execute(
