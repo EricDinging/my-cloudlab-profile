@@ -17,7 +17,7 @@ image = ('urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU20-64-STD', 'UBUNTU
 pc = portal.Context()
 
 pc.defineParameter("num_nodes", "Number of nodes",
-                   portal.ParameterType.INTEGER, 1)
+                   portal.ParameterType.INTEGER, 3)
 pc.defineParameter("user_names", "Usernames (split with space)",
                    portal.ParameterType.STRING, "ericdinging")
 pc.defineParameter("project_group_name", "Project group name",
